@@ -16,14 +16,21 @@ while True:
     else:
         break
 
-# 正式遊戲
+# 開始猜數字
 print('數字範圍設定成功，遊戲正式開始')
 rn = random.randint(r_start, r_end)
 rg = input('猜猜數字是多少？')
 rg = int(rg)
 nt = 1
+
+# 第一次檢查
+while rg > r_end or rg < r_start:
+        print('請輸入',r_start, '到',r_end, '的數字喔！')
+        rg = input('再猜一次?')
+        rg = int(rg)
 count = print('你已經猜', nt, '次了喔！')
 
+# 後續流程
 while True:
     if rg > r_end or rg < r_start:
         print('請輸入',r_start, '到',r_end, '的數字喔！')
